@@ -13,7 +13,6 @@
 ActiveRecord::Schema.define(version: 2020_03_15_180151) do
 
   create_table "cars", force: :cascade do |t|
-    t.string "make"
     t.string "model"
     t.integer "year"
     t.integer "user_id", null: false
@@ -29,11 +28,6 @@ ActiveRecord::Schema.define(version: 2020_03_15_180151) do
     t.integer "car_id", null: false
   end
 
-  create_table "cars_manufacturers", id: false, force: :cascade do |t|
-    t.integer "manufacturer_id", null: false
-    t.integer "car_id", null: false
-  end
-
   create_table "dealerships", force: :cascade do |t|
     t.string "name"
     t.string "location"
@@ -44,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_03_15_180151) do
   create_table "manufacturers", force: :cascade do |t|
     t.string "ceo"
     t.string "revenue"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

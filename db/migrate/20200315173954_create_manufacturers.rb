@@ -3,6 +3,7 @@ class CreateManufacturers < ActiveRecord::Migration[6.0]
     create_table :manufacturers do |t|
       t.string :ceo
       t.string :revenue
+      t.string :name
 
       t.timestamps
     end
