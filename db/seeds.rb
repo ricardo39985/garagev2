@@ -6,9 +6,11 @@ include Faker
 
 # create 20 users
 20.times do
-  User.find_or_create_by(name: Faker::Name.name_with_middle) do |u|
+  User.find_or_create_by(username: Faker::Name.name) do |u|
     u.email = Faker::Internet.email
+    u.password = SecureRandom.hex
   end
+  # byebug
 end
 
 # create 20 manufufacturers
@@ -27,7 +29,7 @@ end
   end
 end
 #create 500 new cars
-5000.times do
+500.times do
   new_car = Car.new
   new_car.user = User.order('RANDOM()').first
   new_car.dealerships << Dealership.order('RANDOM()').first

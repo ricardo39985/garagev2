@@ -10,6 +10,17 @@
   </head>
 
   <body>
+  <h1>Hello <%=user_signed_in? ? current_user.username.to_s : 'Guest'%></h1>
+
+  <%= link_to 'Login', new_user_session_path%>
+  <%= link_to 'Sign Up', new_user_registration_path%>
+  <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
+  <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+
+     <div >
+      <p style= "color: red ;"  class="notice"><%= notice %></p>
+      <p style= "color: red ;"  class="alert"><%= alert %></p>
+     </div>
     <%= yield %>
   </body>
 </html>

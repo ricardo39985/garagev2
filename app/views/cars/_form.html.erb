@@ -1,0 +1,15 @@
+
+<%= form_for [current_user, car] do |f| %>
+  <p>
+    <b>New Car</b><br>
+    <%= f.text_field :model %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.collection_select :manufacturer_id, Manufacturer.where("name IS NOT NULL & name != ''"),:id,:name, include_blank: false,:prompt => 'Please select Manufacturer' %>
+    <%= select_year( Date.today, start_year: 1890, end_year: 2022, include_blank: false)%>
+
+
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
