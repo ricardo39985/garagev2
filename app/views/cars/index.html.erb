@@ -1,0 +1,41 @@
+<div class="">
+  <% current_user.cars.each do |car| %>
+    <div class="row valign-wrapper">
+      <div class="col s12 ">
+        <a href="<%=user_car_path(current_user, car)%>">
+          <div class="card small hoverable">
+            <div class="card-content grey-text darken-3">
+              <h4 class="card-title"><%=car.year%> <%=car.manufacturer.name%> <%=car.model%></h4>
+              <hr>
+              <ul>
+                <p><strong>Model: </strong><%=car.model%></p>
+                <p><strong>Year: </strong><%=car.year%></p>
+                <p><strong>Transmission: </strong><%=car.transmission%></p>
+                <p><strong>Standard: </strong><%=car.standard_specs%></p>
+                <p><strong>Additional Options: </strong><%=car.car_options%></p>
+              </ul>              
+          </div>
+        </a>
+          <div class="card-action">
+            
+            <!--
+            <%=button_to edit_user_car_path(current_user, car), method: :get, class: "btn waves-effect waves-light " do%>
+              <i class="far fa-edit"></i><strong>Edit</strong>
+            <% end %>
+            <%=button_to edit_user_car_path(current_user, car), method: :get, class: "btn waves-effect waves-light right float" do%>
+              <i class="far fa-delete"></i><strong>Delete</strong>
+            <% end %>
+            -->
+            <%= link_to  edit_user_car_path(current_user, car), class: "orange lighten- 3 hoverable waves-effect waves-light btn left" do %>
+                            <i class="far fa-trash-alt"></i> Edit
+
+            <% end %>
+            <%= link_to user_car_path(current_user, car), method: :delete, class: "red lighten-2 hoverable waves-effect waves-light btn right" do %>
+              <i class="far fa-trash-alt"></i> Delete
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

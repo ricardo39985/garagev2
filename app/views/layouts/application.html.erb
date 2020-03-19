@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Garagev2</title>
+    <title>Wishlist</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+      <script src="https://kit.fontawesome.com/4c7508c500.js" crossorigin="anonymous"></script>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-  <h1>Hello <%=user_signed_in? ? current_user.username.to_s : 'Guest'%></h1>
-
-  <%= link_to 'Login', new_user_session_path%>
-  <%= link_to 'Sign Up', new_user_registration_path%>
-  <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
-  <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-
-     <div >
-      <p style= "color: red ;"  class="notice"><%= notice %></p>
-      <p style= "color: red ;"  class="alert"><%= alert %></p>
-     </div>
+  <body class="card-panel grey lighten-2"> 
+    <%= render partial: 'layouts/nav' %>
+    <div class= "container">
+      <div class="row valign-wrapper">
+        <p class="green-text"><%= notice %></p>
+        <p "><%= alert %></p>
+      </div>
     <%= yield %>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
   </body>
 </html>

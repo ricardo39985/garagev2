@@ -1,2 +1,15 @@
-<h1>Cars#show</h1>
-<p>Find me in app/views/cars/show.html.erb</p>
+<h2><%=@car.year.to_s + @car.manufacturer.name + @car.model%></h2>
+<h4>View <%= link_to @car.manufacturer.name, user_car_manufacturer_path(current_user, @car.manufacturer) %> company profile</h4> <br>
+
+<% if @car.dealerships.any? %>
+<hr>
+<h4>Currently Sold at the following dealerships</h4>
+  <div>
+    <% @car.dealerships.each do |dealership| %>
+      <h4>Name: <%=dealership.name%></h4>
+      <p>Address: <%=dealership.location%></p>
+
+    <% end %>
+  </div>
+  
+<% end %>

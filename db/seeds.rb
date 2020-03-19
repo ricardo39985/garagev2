@@ -14,7 +14,7 @@ include Faker
 end
 
 # create 20 manufufacturers
-20.times do
+100.times do
   make_model = Faker::Vehicle.make_and_model.split(' ')
   Manufacturer.find_or_create_by(name: make_model[0]) do |m|
     m.ceo = Faker::Name.name_with_middle
@@ -29,7 +29,7 @@ end
   end
 end
 #create 500 new cars
-500.times do
+20.times do
   new_car = Car.new
   new_car.user = User.order('RANDOM()').first
   new_car.dealerships << Dealership.order('RANDOM()').first

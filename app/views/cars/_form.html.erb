@@ -1,15 +1,38 @@
-
+<% if car.errors.any? %>
+  <ul>
+    <% car.errors.full_messages.each do |error| %>
+      <li class="red-text center"><strong><%=error%></strong></li>
+    <% end %>
+  </ul>
+  <hr>
+<% end %>
 <%= form_for [current_user, car] do |f| %>
   <p>
     <b>New Car</b><br>
-    <%= f.text_field :model %>
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.collection_select :manufacturer_id, Manufacturer.where("name IS NOT NULL & name != ''"),:id,:name, include_blank: false,:prompt => 'Please select Manufacturer' %>
-    <%= select_year( Date.today, start_year: 1890, end_year: 2022, include_blank: false)%>
+    <div class = "field">
+    <%=f.label :model%>
+    <%= f.text_field :model%>
+    </div><br>
 
+    <div class = "browser-default">
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%=f.label :manufacturer%>
+    <%= f.collection_select :manufacturer_id, Manufacturer.where("name IS NOT NULL & name != ''"),:id,:name,{:prompt => 'Please select Manufacturer'}, {:class => 'browser-default'} %>
+    </div><br>
+
+    <div class = "field">
+    <%=f.label :year%>
+    <%= f.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1),{:prompt => 'Please select year'}, {:class => 'browser-default input-field col s12'} %>
+    </div><br>
 
   </p>
   <p>
     <%= f.submit %>
   </p>
 <% end %>
+<script>
+$(".dropdown").select2({
+  theme: "bootstrap"
+});
+
+</script>

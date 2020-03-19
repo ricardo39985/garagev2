@@ -1,1 +1,21 @@
-<h1>show</h1>
+<div class="">
+  <% current_user.cars.each do |car| %>
+    <div class="row valign-wrapper">
+      <div class="col s12 ">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+              <span class="card-title"><%=car.manufacturer.name%></span>
+              <ul>
+                <li><%=car.model%></li>
+                <li><%=car.year%></li>
+              </ul>
+          </div>
+          <div class="card-action">
+            <%= link_to 'Edit', edit_user_car_path(current_user, car) %>
+            <%= link_to 'Delete', user_car_path(current_user, car), method: :delete%>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -15,6 +15,9 @@ ActiveRecord::Schema.define(version: 2020_03_16_162540) do
   create_table "cars", force: :cascade do |t|
     t.string "model"
     t.integer "year"
+    t.string "standard_specs"
+    t.string "car_options"
+    t.string "transmission"
     t.integer "user_id", null: false
     t.integer "manufacturer_id", null: false
     t.datetime "created_at", precision: 6, null: false
