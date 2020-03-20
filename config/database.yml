@@ -9,9 +9,10 @@
 #   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 #   timeout: 5000
 
-# development:
-#   <<: *default
-#   database: db/development.sqlite3
+development:
+  # <<: *default
+  adapter: postgresql
+  database: car_dev
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
