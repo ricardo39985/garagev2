@@ -16,6 +16,10 @@
 
   <body class="card-panel grey lighten-2"> 
     <%= render partial: 'layouts/nav' %>
+    <div class = "comtainer">
+  
+      <h3 class = "center ">Hello, <%=current_user ? current_user.username : 'Guest' %></h3>
+    </div>
     <div class= "container">
       <div class="row valign-wrapper">
         <p class="orange-text"><%= notice %></p>

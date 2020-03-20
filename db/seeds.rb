@@ -10,7 +10,6 @@ include Faker
     u.email = Faker::Internet.email
     u.password = SecureRandom.hex
   end
-  # byebug
 end
 
 # create 20 manufufacturers

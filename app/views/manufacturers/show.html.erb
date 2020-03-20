@@ -10,7 +10,7 @@
           <%= link_to  user_car_path(current_user, @car), class: "green lighten- 3 hoverable waves-effect waves-light btn left" do %>
               <i class="far fa-trash-alt"></i> Back to Car
           <% end %>
-          <%= link_to user_cars_path(current_user, @car), method: :delete, class: "green lighten hoverable waves-effect waves-light btn right" do %>
+          <%= link_to user_cars_path(current_user), method: :get, class: "green lighten hoverable waves-effect waves-light btn right" do %>
                 <i class="far fa-trash-alt"></i> All Cars
           <% end %>
       <div>
