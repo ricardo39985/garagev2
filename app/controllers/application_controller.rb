@@ -3,6 +3,7 @@
 class ApplicationController < ActionController::Base
   helper_method :redirect_if_not_logged_in, :redirect_if_try_to_spoof
   def not_found
+    flash[:notice] = "No such page \u{1F937}"
     redirect_to root_path
   end
 
