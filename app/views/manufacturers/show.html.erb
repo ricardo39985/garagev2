@@ -1,1 +1,19 @@
-
+<div class="row " >
+ <div class="col s12 ">
+    <div class="card medium">
+      <div class="card-content grey-text darken-3">
+          <h1 class="card-title"><strong><%=@car.manufacturer.name%></strong></h1>
+          <h5><strong>Ceo: <%=@man.ceo%></strong></h5>
+          <h5><strong>Revenue: <%=@man.revenue%></strong></h5>
+      </div>
+      </div class= "card-action">
+          <%= link_to  user_car_path(current_user, @car), class: "green lighten- 3 hoverable waves-effect waves-light btn left" do %>
+              <i class="far fa-trash-alt"></i> Back to Car
+          <% end %>
+          <%= link_to user_cars_path(current_user, @car), method: :delete, class: "green lighten hoverable waves-effect waves-light btn right" do %>
+                <i class="far fa-trash-alt"></i> All Cars
+          <% end %>
+      <div>
+    </div>
+  </div>
+</div>

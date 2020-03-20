@@ -6,33 +6,44 @@
   </ul>
   <hr>
 <% end %>
-<%= form_for [current_user, car] do |f| %>
-  <p>
-    <b>New Car</b><br>
-    <div class = "field">
-    <%=f.label :model%>
-    <%= f.text_field :model%>
-    </div><br>
+ <div class="row valign-wrapper">
+  <div class="col s12 ">
+   <div class="card medium">
+     <div class="card-content grey-text darken-3">
+      <%= form_for [current_user, car] do |f| %>
+        <p>
+          <b>New Car</b><br>
+          <div class = "field">
+          <%=f.label :model%>
+          <%= f.text_field :model%>
+          </div><br>
 
-    <div class = "browser-default">
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%=f.label :manufacturer%>
-    <%= f.collection_select :manufacturer_id, Manufacturer.where("name IS NOT NULL & name != ''"),:id,:name,{:prompt => 'Please select Manufacturer'}, {:class => 'browser-default'} %>
-    </div><br>
+          <div class = "field">
+          <%= f.hidden_field :user_id, :value => current_user.id %>
+          <%=f.label :manufacturer%>
+          <%= f.collection_select :manufacturer_id, Manufacturer.where("name IS NOT NULL & name != ''"),:id,:name,{:prompt => 'Please select Manufacturer'}, {:class => 'browser-default'} %>
+          </div><br>
 
-    <div class = "field">
-    <%=f.label :year%>
-    <%= f.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1),{:prompt => 'Please select year'}, {:class => 'browser-default input-field col s12'} %>
-    </div><br>
+          <div class = "field">
+          <%=f.label :year%>
+          <%= f.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1),{:prompt => 'Please select year'}, {:class => 'browser-default input-field col s12'} %>
+          </div><br>
 
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-<script>
-$(".dropdown").select2({
-  theme: "bootstrap"
-});
-
-</script>
+        </p>
+        <p>
+    <div class="card-action">
+          <%= button_tag class: "green lighten-2 hoverable waves-effect waves-light btn center" do %>
+            <strong>
+            <% if car.id %>
+              <i class="fas fa-pen-fancy"></i>   Update
+              <% else %>
+              <i class="fas fa-plus"></i>  Create 
+            <% end %>
+            </strong>
+          <% end %>
+    </div>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>

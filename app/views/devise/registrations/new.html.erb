@@ -28,8 +28,9 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+     <%= button_tag class: "green lighten-2 hoverable waves-effect waves-light btn center" do %>
+        <strong><i class="far fa-user-circle"></i>   Create Account</strong>
+      <% end %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>

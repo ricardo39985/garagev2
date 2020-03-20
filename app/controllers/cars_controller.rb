@@ -9,11 +9,7 @@ class CarsController < ApplicationController
   def create
     redirect_if_try_to_spoof
     @car = Car.new(car_params)
-    if @car.save
-      redirect_to user_car_path(current_user, @car)
-    else
-      render :new
-    end
+    @car.save ? (redirect_to user_car_path(current_user, @car)) : (render :new)
   end
 
   def index
@@ -23,7 +19,6 @@ class CarsController < ApplicationController
   def show
     redirect_if_try_to_spoof
     find_car_or_redirect
-    # byebug
   end
 
   def edit
@@ -51,10 +46,10 @@ class CarsController < ApplicationController
     return unless user_signed_in?
 
     @car = current_user.cars.find_by(id: params[:id])
-    unless @car
-      flash[:notice] = 'You do not have permission to do that'
-      redirect_to current_user
-    end
+    return if @car
+
+    flash[:notice] = 'You do not have permission to do that'
+    redirect_to current_user
   end
 
   def car_params
