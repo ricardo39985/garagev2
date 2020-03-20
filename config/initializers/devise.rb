@@ -13,7 +13,7 @@ Devise.setup do |config|
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
-  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], skip_jwt: true
+  config.omniauth :google_oauth2, ENV['PROD_ID'], ENV['PROD_SEC'], skip_jwt: true
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
