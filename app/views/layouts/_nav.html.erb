@@ -7,23 +7,32 @@
       <div class="col s12 m8">
         <div class= "center-align">
           <% if user_signed_in? %>
-                    <%= link_to destroy_user_session_path, method: :delete, class: "green lighten-1 hoverable waves-effect waves-light btn center" do %>
-                      <i class="fas fa-sign-out-alt"></i>  Log out
-                    <% end %>
-                    <%= link_to  new_user_car_path(current_user),class: "green lighten-1 hoverable waves-effect waves-light btn center" do %>
-                      <i class="fas fa-plus"></i> Add Car
-                    <% end %>
+              <%= link_to destroy_user_session_path, method: :delete, class: "green lighten-1 hoverable waves-effect waves-light btn center" do %>
+                <i class="fas fa-sign-out-alt"></i>  Log out
+              <% end %>
+              <%= link_to  new_user_car_path(current_user),class: "green lighten-1 hoverable waves-effect waves-light btn center" do %>
+                <i class="fas fa-plus"></i> Add Car
+              <% end %>
+              <%= link_to user_cars_path(current_user), method: :get, class: "green lighten-1 hoverable waves-effect waves-light btn center" do %>
+                <i class="fas fa-car"></i> All Cars
+              <% end %>
           <% else %>
-                      <%= link_to new_user_session_path,class: "green lighten-1 hoverable waves-effect waves-light btn center" do %>
-                        <i class="fas fa-sign-in-alt"></i>  Login
-                      <% end %>
-                      <%= link_to  new_user_registration_path,class: "green lighten-1 hoverable waves-effect waves-light btn center" do %>
-                        <i class="fas fa-user-plus"></i>  Sign Up
-                    <% end %>
-                      <%=link_to user_google_oauth2_omniauth_authorize_path, class: "green lighten-1 hoverable waves-effect waves-light btn center" do %>
-                        <i class="fab fa-google"></i>  Sign in with Google
-                    <% end %>
+              <%= link_to new_user_session_path,class: "green lighten-1 hoverable waves-effect waves-light btn center" do %>
+                 <i class="fas fa-sign-in-alt"></i>  Login
+              <% end %>
+              <%= link_to  new_user_registration_path,class: "green lighten-1 hoverable waves-effect waves-light btn center" do %>
+                 <i class="fas fa-user-plus"></i>  Sign Up
+              <% end %>
+              <%=link_to user_google_oauth2_omniauth_authorize_path, class: "green lighten-1 hoverable waves-effect waves-light btn center" do %>
+                <i class="fab fa-google"></i>  Sign in with Google
+              <% end %>
           <% end %> 
+          <%= link_to 'https://github.com/ricardo39985/garagev2', target: :_blank, class: "green lighten-1 hoverable waves-effect waves-light btn center" do %>
+             <i class="fab fa-github"></i>  View on Github
+          <% end %>
+          <%= link_to 'https://youtu.be/JuTm2NHjejc', target: :_blank, class: "green lighten-1 hoverable waves-effect waves-light btn center" do %>
+             <i class="fab fa-youtube"></i>  View Youtube Demo
+          <% end %>
         </div>
       </div>
     </div>
