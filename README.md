@@ -1,24 +1,50 @@
-# README
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
+</p>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h3 align="center"></h3>
 
-Things you may want to cover:
+<div align="center">
 
-* Ruby version
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
-* System dependencies
+</div>
 
-* Configuration
+---
 
-* Database creation
+<p align="center"> Car Wishlist
+    <br> 
+</p>
 
-* Database initialization
+## 📝 Table of Contents
 
-* How to run the test suite
+- [About](#about)
+- [Getting Started](#getting_started)
+- [Authors](#authors)
 
-* Services (job queues, cache servers, search engines, etc.)
+## 🧐 About <a name = "about"></a>
 
-* Deployment instructions
+Rails project to demonstrate Restfulness and CRUD actions
 
-* ...
+## 🏁 Getting Started <a name = "getting_started"></a>
+
+Clone  
+Bundle  
+rails s  
+
+### Prerequisites
+```
+Ruby 2.6.1  
+Rails 5+  
+```
+
+## ✍️ Authors <a name = "authors"></a>
+
+- [@ricardo39985](https://github.com/ricardo39985) - Idea & Initial work
+
+
+
