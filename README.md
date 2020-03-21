@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwebstockreview.net%2Fexplore%2Fclipart-car-logo%2F&psig=AOvVaw1teeDSbqy0Uwt0MxpsFZY1&ust=1584840447454000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMDciPO0qugCFQAAAAAdAAAAABAc" alt="Car logo"></a>
+ <img width=200px height=200px src="https://p7.hiclipart.com/preview/189/587/712/bmw-car-logo-luxury-vehicle-bmw-logo.jpg" alt="Car logo"></a>
 </p>
 
 <h3 align="center"></h3>
