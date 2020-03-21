@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
+ <img width=200px height=200px src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vexels.com%2Fpng-svg%2Fpreview%2F128573%2Fred-circle-retro-car&psig=AOvVaw1teeDSbqy0Uwt0MxpsFZY1&ust=1584840447454000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMDciPO0qugCFQAAAAAdAAAAABAEg" alt="Car logo"></a>
 </p>
 
 <h3 align="center"></h3>
